@@ -6,6 +6,7 @@
       background-color: #000000 !important;
       border-radius:10px;
       border: 2px solid  #75fa78 !important;
+      background-size: contain;
     }
     .top-site-outer {
       background-color: #000;
