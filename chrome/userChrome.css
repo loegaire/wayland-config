@@ -1,0 +1,105 @@
+/*@import url(/home/thinh/.mozilla/firefox/i1ekwez8.thinh-1695398583350/chrome/curvedtabs.css);
+*/
+panelview,  
+.panel-arrowcontent{ 
+  background: #4db854 !important;  
+  color: #243b1e !important;
+}
+#PanelUI-menu-button {
+  background-color: hotpink;
+  height: 25px;
+  list-style-image: url("chrome://browser/skin/menu.svg");
+  color: #243b1e !important;
+}
+#PlacesToolbarItems {
+  color: #ff7bda;
+  height:24px !important;
+}
+#save-to-pocket-button {
+  display: none;
+}
+scrollbox {
+  height:30px;
+  
+}
+#nav-bar-customization-target {
+  height: 25px;
+  background-color: hotpink;
+  color:#193017;
+  
+}
+#nav-bar {
+  height: 27px;
+}
+#TabsToolbar
+.toolbarbutton-1 {
+  height: 25px;
+}
+#alltabs-button {
+  height: 25px;
+}
+.titlebar-spacer {
+  display:none;
+}
+.tab-loading-burst {
+  border-radius: 10px;
+  /*background-color: #1f331e;*/
+}
+.tabbrowser-tab {
+  height: 25px
+}
+.tab-content {
+  width: auto;
+  height: 25px;
+  color:#81fc85 !important;;
+  border: 2px solid hotpink;
+  background-color: #1f331e; 
+  overflow: scroll;
+  overflow-anchor: auto;
+  border-radius:10px;
+  overflow: clip;
+}
+#urlbar-background {
+  height: 27px;
+  background-color: #ff4de150;
+}
+#urlbar-input-container {
+  background-color: hotpink;
+  color:#193017;
+  height:27px !important;
+}
+#TabsToolbar-customization-target {
+  background-color: #4db854;
+  height:27px;
+}
+#tabs-newtab-button {
+  color: #1f331e !important;
+}
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  max-width: 4em;
+  appearance: none;
+  height: 20px;
+  border:1px solid hotpink;
+  border-radius:10px !important;
+  color:#81fc85;
+}
+#alltabs-button {
+  color: #193017 !important;
+}
+.titlebar-close {
+  background-color:#fc60d0 !important;
+  color: #243b1e !important;
+}
+.titlebar-buttonbox.titlebar-color {
+  color: #4db854 !important;
+}
+#PersonalToolbar {
+  height: 24px !important;
+  background-color: #243b1e !important;
+}
+:root{
+   --autocomplete-popup-hover-background: #452132 !important; 
+   --autocomplete-popup-separator-color: #4db854 !important; 
+   --autocomplete-popup-highlight-background: #81fc85 !important;
+   --autocomplete-popup-highlight-color: #193017 !important;
+}

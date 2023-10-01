@@ -1,0 +1,39 @@
+@-moz-document url(about:home), url(about:newtab){
+  body {
+    background-image:url(content.jpg);
+    .fake-editable {
+      opacity: 0.5 !important;
+      background-color: #000000 !important;
+      border-radius:10px;
+      border: 2px solid  #75fa78 !important;
+    }
+    .top-site-outer {
+      background-color: #000;
+      border-radius: 0px !important;
+      display: table-cell;
+      opacity:0.85;
+    }
+    .wordmark {
+      fill: #000 !important;
+    }
+    .logo-and-wordmark {
+      display: none !important;
+    }
+    .collapsible-section.top-sites {
+      background-color: #4db859;
+      opacity: 0.8;
+    }
+    .tile {
+      background-color: #000000 !important;
+    }
+    .top-site-icon.rich-icon {
+      background-color: #000 !important;
+    }
+    span {
+      color: #ff75e3;
+      font-size: medium;
+      font-weight: bolder;
+      font-variant-caps: small-caps;
+    }
+  } 
+}
