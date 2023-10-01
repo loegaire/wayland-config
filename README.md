@@ -5,3 +5,6 @@ The configuration files for a setup resembling this:
 September/2023
 Customized neofetch:
 ![alt-text](https://github.com/loegaire/wayland-config/blob/main/20230928_23h44m28s_grim.png)
+September/2023
+Customized firefox from scratch (files located in chrome directory)
+![alt-text](https://github.com/loegaire/wayland-config/blob/main/chrome/)
