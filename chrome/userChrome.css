@@ -51,13 +51,16 @@ scrollbox {
 .tab-content {
   width: auto;
   height: 25px;
-  color:#81fc85 !important;;
-  border: 2px solid hotpink;
-  background-color: #1f331e; 
-  overflow: scroll;
+  color:#81fc85 !important;
+  background-color: transparent; 
+  overflow: clip;
   overflow-anchor: auto;
   border-radius:10px;
-  overflow: clip;
+ 
+}
+.tab-content[selected="true"]{
+  color: #193017 !important;
+  border: 2px solid #662e60;
 }
 #urlbar-background {
   height: 27px;
@@ -103,3 +106,21 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
    --autocomplete-popup-highlight-background: #81fc85 !important;
    --autocomplete-popup-highlight-color: #193017 !important;
 }
+tab {
+  background-color: #243b1e !important;
+  border-radius: 10px !important;
+  background-clip: content-box;
+}
+tab:where([visuallyselected="true"]) {
+  background-color: hotpink !important;
+  border-radius:10px;
+  overflow:clip;
+}
+#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, .tab-background:is([selected], [multiselected]) {
+  background-color:transparent !important;
+}
+.tabbrowser-tab:is(:not([visuallyselected], [multiselected]), :-moz-lwtheme) {
+  color: #ff00ff !important;
+  opacity: 1;
+}
+
