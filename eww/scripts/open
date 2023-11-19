@@ -1,0 +1,5 @@
+#!/bin/bash
+
+kitty -e ~/$1
+kitty -e ls
+	

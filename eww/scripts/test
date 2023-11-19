@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mm="beo"
+if [ $mm = "beo" ]
+then
+    echo "mmb"
+else
+    echo "mmkb"
+fi
+
+	

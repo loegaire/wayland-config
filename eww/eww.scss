@@ -1,0 +1,197 @@
+$pu:#9d7abf;
+$gr:#a7f595;$pi:#f295f5;$dpi:#322033;$dgr:#213320;$dcy:#233d3b;$cy:#85e6dc;$re:#ff5269;$ye:#eff781;$bl:#8b85d4;$or:#e3a781;
+*{
+color:$gr;
+all:unset;
+}
+.textbox {
+background-color:$dgr;
+color:$gr;
+border-radius:10px;
+padding:10px;
+}
+.downloads{
+color:$or;
+font-size:30px;
+}
+.pictures{
+color:$cy;
+font-size:30px;
+}
+
+.Music{
+color:$bl;
+font-size:30px;
+}
+.config{
+color:$ye;
+font-size:30px;
+}
+.power{
+font-size:30px;
+}
+.reboot{
+background-color:$dcy;
+color:$bl;
+border: 2px solid $gr;
+border-radius:10px;
+}
+.reboot:hover{
+border: 2px solid $gr;
+color:$dcy;
+border-radius:10px;  
+background-color:$bl;
+}
+.shutdown{
+color:$re;
+border: 2px solid $gr;
+background-color:$dcy;
+border-radius:10px;
+}
+.shutdown:hover{
+background-color:$re;
+border: 2px solid $gr;
+color:$dgr;
+border-radius:10px;
+}
+.suspend{
+color:$cy;
+border: 2px solid $gr;
+background-color:$dcy;
+border-radius:10px;
+}
+.suspend:hover{color:$dgr;border: 2px solid $gr;background-color:$cy;border-radius:10px;}
+.logout{
+color:$ye;
+border: 2px solid $gr;
+background-color:$dcy;
+border-radius:10px;
+}
+.logout:hover{color:$dgr;border: 2px solid $gr;background-color:$ye;border-radius:10px;}
+.title{
+font-style:oblique;
+}
+.user-text{
+font-size:20px;
+font-weight:bold;
+}
+.icon {
+background-color:$dgr;
+border-radius:10px;
+color:$pi;
+}
+.box2 {
+color:$dgr;
+/*background-image:url("/home/thinh/Downloads/sky2.jpg");*/
+background-color:$gr;
+background-size:cover;
+background-repeat:no-repeat;
+border-radius:10px;
+font-size:30px;
+padding: 0px 5px 0px 5px;
+/*text-shadow: -1px -1px 0 $gr, 1px -1px 0 $gr, -1px 1px 0 $gr, 1px 1px 0 $gr;*/
+}
+.progress trough{
+background-color:$gr;
+min-height:10px;
+min-width:250px;
+border-radius:10px;
+}
+.progress trough highlight{
+background-color:#cc64bc;
+border-radius:10px;
+}
+.widgets{
+background-color:$dgr;
+color:$cy;
+padding:10px;
+border-radius:10px;
+}
+.quote{
+font-size:20px;
+}
+tooltip{
+background-color:$dpi;
+color:$gr;
+} 
+.musiccontrol{
+font-size:20px;
+}
+.musicwid{
+background-color:$dgr;
+color:$gr;
+padding:10px;
+border-radius:10px;
+}
+.expand {
+color:transparent;
+}
+.expand:hover {
+color:transparent;
+}
+.apps{
+font-size:25px;
+background-color:$dgr;
+padding:10px;
+border-radius:10px;
+}
+.browser {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.browser:hover{background-color:$pi;}
+.text-editor {
+background-color:$gr;
+border-radius:10px;
+color:$dcy;
+}
+.text-editor:hover{background-color:$pi;}
+.files {
+background-color:$gr;
+border-radius:10px;
+color:$dcy;
+}
+.files:hover{background-color:$pi;}
+.draw {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.draw:hover{background-color:$pi;}
+.music {
+background-color:$gr;
+border-radius:10px;
+color:$dcy;
+}
+.music:hover{background-color:$pi;}
+.terminal {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.terminal:hover{background-color:$pi;}
+.compose {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.compose:hover{background-color:$pi;}
+.processes {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.processes:hover{background-color:$pi;}
+.games {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.games:hover{background-color:$pi;}
+.pdf {
+background-color:$gr;
+color:$dcy;
+border-radius:10px;
+}
+.pdf:hover{background-color:$pi;}

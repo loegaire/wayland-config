@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ $1 = "firefox" ]
+then
+    firefox   
+elif [ $1 = "text-editor" ]
+then
+    kitty -e nvim
+elif [ $1 = "music" ]
+then    
+    kitty -e cmus
+elif [ $1 = "terminal" ]
+then
+    kitty
+elif [ $1 = "processes" ]
+then
+    kitty -e htop
+elif [ $1 = "files" ]
+then
+    kitty -e ranger
+elif [ $1 = "compose" ]
+then
+    mscore
+elif [ $1 = "draw" ]
+then
+    krita
+elif [ $1 = "games" ]
+then
+    lutris
+elif [ $1 = "pdf" ]
+then
+    zathura
+else
+    echo "không có ứng dụng nào.."
+fi
+
+

@@ -1,0 +1,355 @@
+(defwindow thinh
+           :stacking "bottom"
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "50px"
+                               :height "700px"
+                               :anchor "right center")
+           :exclusive false
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+  (wid :peek peek)
+)
+(defwindow right
+         :stacking "bottom"
+         :monitor 0
+         :geometry (geometry :x "90px"
+                             :y "0%"
+                             :width "50px"
+                             :height "700px"
+                             :anchor "right center")
+         :exclusive false
+         :reserve (struts :distance "40px" :side "top")
+         :windowtype "dock"
+         :wm-ignore false
+(weather :peek peek)
+) 
+(defwindow left
+         :stacking "bottom"
+         :focusable true
+         :monitor 0
+         :geometry (geometry :x "0%"
+                             :y "0%"
+                             :width "50px"
+                             :height "700px"
+                             :anchor "left center")
+         :exclusive false
+         :reserve (struts :distance "40px" :side "top")
+         :windowtype "dock"
+         :wm-ignore false
+(music :peek2 peek2)
+)         
+(defwidget wid [peek]
+(eventbox
+  :onhover "eww update peek=true"
+  (expander
+    :class "expand"
+    :expanded peek
+    (box
+      :class "apps"
+      :spacing 10
+      :orientation "v"
+      (eventbox(button
+          :height 40
+          :width 40
+          :class "browser"
+          :onclick "scripts/launch firefox"
+          :timeout "5s"
+        "󰈹"))
+      (eventbox(button
+        :class "text-editor"
+        :onclick "scripts/launch text-editor"              
+        "󱞂"))
+      (eventbox(button
+        :class "music"
+        :onclick "scripts/launch music" 
+        "󰽴"))
+      (eventbox(button
+        :class "terminal"
+        :onclick "scripts/launch terminal" 
+        " "))
+      (eventbox(button
+        :class "processes"
+        :onclick "scripts/launch processes" 
+        " "))
+      (eventbox(button
+        :class "files"
+        :onclick "scripts/launch files" 
+        " "))
+      (eventbox(button
+        :class "compose"
+        :onclick "scripts/launch compose" 
+        "󰈣"))
+      (eventbox(button 
+        :class "draw"
+        :onclick "scripts/launch draw" 
+        " "))
+      (eventbox(button
+        :class "games"
+        :onclick "scripts/launch games" 
+        " "))
+      (eventbox(button
+        :class "pdf"
+        :onclick "scripts/launch zathura" 
+        ""))
+        )
+      )
+    )
+  )
+
+(defwidget weather [peek]
+  (eventbox
+    :onhoverlost "eww update peek=false"
+    (expander
+      :class "expand"
+      :expanded peek
+      (box
+        :orientation "horizontal"
+        (box
+          :spacing 10
+          :orientation "vertical"
+          :class "widgets"
+          (box
+            :width 370
+            :orientation "vertical"
+            :class "box2"
+            (label :text weather
+            )
+            (label :text day
+            )
+            (label :text quote
+                   :class "quote"
+            )
+          )
+          (box
+            :orientation "horizontal"
+            :class "icon"
+            (image :path "/home/thinh/Downloads/fri.png"
+                   :image-width 100
+                   :image-height 100
+            )
+            (box
+              :orientation "vertical"
+              (label :text "thinh" :class "user-text" :yalign 0.6)
+              (label :text "The Gigachad" :class "title")
+              (label :text "-${UP}" )
+            )
+          )
+          (box
+              :class "kernelbox"
+              :orientation "v"
+              :style "background-color:#213320;color:#85e6dc;border-radius:10px;"
+              (label :text "󱞩  : ${kernel}" :style "color:#eff781;")
+              (box
+                :orientation "h"
+                (label :text "󱞩 Số tiến trình: ${proces}")
+                (label :text "󱞩 Tần số CPU: ${round(EWW_CPU.avg,2)}" :style "color:#f74065;")
+              )
+            )
+          (box
+            :orientation "vertical"
+            :spacing 10
+               
+            (box
+              (eventbox(button 
+                :class "downloads"
+                :onclick "scripts/open Downloads"
+                ""
+              ))
+              (eventbox(button 
+                :class "config"
+                :onclick "scripts/open .config"
+                ""
+              ))
+              (eventbox(button 
+                :class "pictures"
+                :onclick "scripts/open Pictures"
+                ""
+              ))
+              (eventbox(button 
+                :class "Music"
+                :onclick "scripts/open Music"
+                "󱍙"
+              ))
+            )
+            (box
+              :class "power"
+              :orientation "horizontal"
+              :spacing 25
+              (eventbox(button :onclick "shutdown -r now" :class "reboot" :tooltip "Reboot?""󰢘"))
+              (eventbox(button :onclick "shutdown -h now" :class "shutdown" :tooltip "Shutdown?""󰖙"))
+              (eventbox(button :onclick "systemctl suspend" :class "suspend":tooltip "Suspend?""" ))
+              (eventbox(button :onclick "hyprctl dispatch exit":class "logout":tooltip "Log out?""" ))
+            )
+          ) 
+        )
+      )
+    )
+  )
+)
+(defwidget music [peek2]
+  (eventbox
+    :onhover "eww update peek2=true"
+    :onhoverlost "eww update peek2=false"
+    (expander
+      :class "expand"
+      :expanded peek2
+      (box
+        :style "margin-left:10px;"
+        :spacing 10
+        :orientation "v"
+          (box
+            :class "musicwid"
+            :orientation "v"
+            (box
+              (image :path "${albumart}"
+              :image-width 100
+              :image-height 100
+              )
+            )
+            (box
+              :orientation "v"
+              (label :text title :style "font-size:20px; font-weight:bold;") 
+              (label :text album :style "color:#eff781;")
+              (label :text artist :style "color:#85e6dc;")    
+              (scale
+                :class "progress"
+                :value progress
+                :onchange "playerctl position {}"
+                :min 0
+                :max {max_prog/1000000-3}
+              )
+              (box
+                :class "musiccontrol"
+                (checkbox
+                :style "color:transparent;"
+                :onunchecked "playerctl loop None && eww update loop="
+                :onchecked "playerctl loop Track && eww update loop="
+                (label :text loop :style "color:#a7f595;")
+                )
+
+                (button
+                  :onclick "playerctl position 10-"
+                  "󰓕"
+                )
+                (button
+                  :onclick "playerctl previous"
+                  "󰒮"
+                )
+                (checkbox
+                  :style "color:transparent;padding-right:18px;"
+                  :onchecked "playerctl pause && eww update play="
+                  :onunchecked "playerctl play && eww update play="
+                  (label :text play :style "color:#a7f595;")
+                )
+                (button
+                  :onclick "playerctl next"
+                  "󰒭"
+                )
+                (button
+                  :onclick "playerctl position 10+"
+                  "󰓗"
+                ) 
+                (checkbox
+                :style "color:transparent;"
+                :onunchecked "playerctl shuffle On && eww update shuffle=󰒟"
+                :onchecked "playerctl shuffle Off && eww update shuffle=󰒞"
+                (label :text shuffle :style "color:#a7f595;")
+                )
+
+              )
+            )
+          )
+        (box
+          :class "textbox"
+          :orientation "v"
+          (label :style "color:#213320;font-size:15px;background-color:#a7f595;
+            border-top-left-radius:10px;border-top-right-radius:10px;" :text "󰉊 Ghi chú cho ngày hôm nay ٩(ˊᗜˋ*)و 󰉊")    
+          (input
+            :style "color:#85e6dc"
+            :value "  ${text}"
+            :onaccept "eww update text={}"
+          )
+          (input
+            :style "color:#eff781"
+            :value "  ${text2}"
+            :onaccept "eww update text2={}"
+          ) 
+          (input 
+            :style "color:#9d7adf"
+            :value  "  ${text3}"
+            :onaccept "eww update text3={}"
+          )
+          (input 
+            :style "color:#ff5269"
+            :value  "  ${text4}"
+            :onaccept "eww update text4={}"
+          )
+        )
+      )
+    )
+  )
+)
+(defvar text "")
+(defvar text2 "")
+(defvar text3 "")
+(defvar text4 "")
+(defvar play "")
+(defvar peek false)
+(defvar peek2 false)
+(defvar loop "")
+(defvar shuffle "󰒞")
+(defpoll quote :interval "5s"
+               :initial "Đang tải.."
+               :run-while peek
+  `scripts/quote.sh`)
+(defpoll weather :interval "12h"
+                 :initial "Đang tải.."
+                 :run-while peek
+  `scripts/get_weather.sh`)
+(defpoll day   :interval "12h"
+               :initial "Đang tải.."
+               :run-while peek
+  `scripts/day.sh`)
+(defpoll albumart :interval "5s"
+               :initial "/home/thinh/Pictures/bocchi.jpg"
+               :run-while peek2
+  `scripts/albumart.sh`)
+(defpoll UP :interval "5s"
+               :initial "Đang tải.."
+               :run-while peek
+  `uptime -p`)
+(defpoll kernel :interval "24h"
+               :initial "Đang tải.."
+               :run-while peek
+  `uname -r`)
+(defpoll proces :interval "1s"
+               :initial "Đang tải.."
+               :run-while peek
+`ps -e | wc -l`)
+(defpoll title :interval "1s"
+               :initial "Đang tải.."
+               :run-while peek2
+`playerctl metadata title`)
+(defpoll artist :interval "1s"
+               :initial "Đang tải.."
+               :run-while peek2
+`playerctl metadata artist`)
+(defpoll album :interval "1s"
+               :initial "Đang tải.."
+               :run-while peek2
+`playerctl metadata album`)
+(defpoll max_prog :interval "1s"
+                  :initial 0
+                  :run-while peek2
+`playerctl metadata | grep -o "[0-9][0-9][0-9]000000"`)
+(defpoll progress :interval "1s"
+                  :initial 0
+                  :run-while peek2
+`playerctl position`)
+
+
+
+
